@@ -14,9 +14,11 @@
                 <dd>{{ loop.index0 }}</dd>
                 <dt>{{ 'label.url'|trans }}</dt>
                 <dd>{{ bookmark.url }}</dd>
-                <dt>{{ 'label.tags'|trans }}</dt>
-                <dd>{{ bookmark.url }}</dd>
             </dl>
+            {% for tag in bookmark.tags %}
+                {{ tag }}
+            {% endfor %}
+
         {% endfor %}
 
     {% else %}
