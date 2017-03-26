@@ -29,10 +29,10 @@ class BookmarkController extends Controller
      *     name="bookmark_index"
      * )
      */
-    public function indexAction()
+
+        public function indexAction()
     {
-        $bookmarkRepository = new BookmarkRepository();
-        $bookmarks = $bookmarkRepository->findAll();
+        $bookmarks = $this->get('app.repository.bookmark')->findAll();
 
         return $this->render(
             'bookmark/index.html.twig',
@@ -52,8 +52,7 @@ class BookmarkController extends Controller
      */
    public function viewAction($id)
     {
-        $bookmarkRepository = new BookmarkRepository();
-        $bookmark = $bookmarkRepository->findOneById($id);
+        $bookmark = $this->get('app.repository.bookmark')->findOneById($id);
         
          return $this->render(
             'bookmark/view.html.twig',
