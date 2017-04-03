@@ -22,20 +22,20 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_14d02fe95ca6e6929397aa0747153513b32baa6e82fc02e8090ef83235169c0d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_14d02fe95ca6e6929397aa0747153513b32baa6e82fc02e8090ef83235169c0d->enter($__internal_14d02fe95ca6e6929397aa0747153513b32baa6e82fc02e8090ef83235169c0d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
+        $__internal_80d28b0b1959e833189ac1a4a749df78b2c8c2365125a756b8e067219d4d1c80 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_80d28b0b1959e833189ac1a4a749df78b2c8c2365125a756b8e067219d4d1c80->enter($__internal_80d28b0b1959e833189ac1a4a749df78b2c8c2365125a756b8e067219d4d1c80_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_14d02fe95ca6e6929397aa0747153513b32baa6e82fc02e8090ef83235169c0d->leave($__internal_14d02fe95ca6e6929397aa0747153513b32baa6e82fc02e8090ef83235169c0d_prof);
+        $__internal_80d28b0b1959e833189ac1a4a749df78b2c8c2365125a756b8e067219d4d1c80->leave($__internal_80d28b0b1959e833189ac1a4a749df78b2c8c2365125a756b8e067219d4d1c80_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_de50cb99cc19579b61314aafd385a2f5ab2f8056de5567221cceae1f1a8f646b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_de50cb99cc19579b61314aafd385a2f5ab2f8056de5567221cceae1f1a8f646b->enter($__internal_de50cb99cc19579b61314aafd385a2f5ab2f8056de5567221cceae1f1a8f646b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_ea35d62b639ee8c3dd10c74a42a98480309d3b433c00a92235ba2fecfd3b041f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ea35d62b639ee8c3dd10c74a42a98480309d3b433c00a92235ba2fecfd3b041f->enter($__internal_ea35d62b639ee8c3dd10c74a42a98480309d3b433c00a92235ba2fecfd3b041f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
         echo "    ";
@@ -43,15 +43,15 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
         echo "
 ";
         
-        $__internal_de50cb99cc19579b61314aafd385a2f5ab2f8056de5567221cceae1f1a8f646b->leave($__internal_de50cb99cc19579b61314aafd385a2f5ab2f8056de5567221cceae1f1a8f646b_prof);
+        $__internal_ea35d62b639ee8c3dd10c74a42a98480309d3b433c00a92235ba2fecfd3b041f->leave($__internal_ea35d62b639ee8c3dd10c74a42a98480309d3b433c00a92235ba2fecfd3b041f_prof);
 
     }
 
     // line 7
     public function block_body($context, array $blocks = array())
     {
-        $__internal_73217e1e3fc60ddec3a1491b7647183463af6eeffadf8170fa454dfb87bbaa78 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_73217e1e3fc60ddec3a1491b7647183463af6eeffadf8170fa454dfb87bbaa78->enter($__internal_73217e1e3fc60ddec3a1491b7647183463af6eeffadf8170fa454dfb87bbaa78_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_7ef9462fa8a9db7c954c5312d492b3b8d2529f1141cddabe59c6afa1cadf68b3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7ef9462fa8a9db7c954c5312d492b3b8d2529f1141cddabe59c6afa1cadf68b3->enter($__internal_7ef9462fa8a9db7c954c5312d492b3b8d2529f1141cddabe59c6afa1cadf68b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
         echo "    <h1>";
@@ -115,16 +115,35 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
                                 </a>
                             </div>
                         </td>
+                         <td>
+                            <div class=\"btn-group\" role=\"group\" aria-label=\"";
+                // line 34
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("label.actions"), "html", null, true);
+                echo "\">
+                                <a href=\"";
+                // line 35
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tag_add", array("id" => $this->getAttribute($context["item"], "id", array()))), "html", null, true);
+                echo "\" class=\"btn btn-default\" title=\"";
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("action.add"), "html", null, true);
+                echo "\">
+                                    <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span>
+                                    ";
+                // line 37
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("action.add"), "html", null, true);
+                echo "
+                                </a>
+                            </div>
+                        </td>
                     </tr>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 35
+            // line 43
             echo "                <div class=\"navigation text-center\">
             ";
-            // line 36
+            // line 44
             echo $this->env->getExtension('WhiteOctober\PagerfantaBundle\Twig\PagerfantaExtension')->renderPagerfanta((isset($context["tags"]) ? $context["tags"] : $this->getContext($context, "tags")), "twitter_bootstrap3_translated", array("routeName" => "tag_index_paginated"));
             echo "
         </div>
@@ -134,17 +153,17 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
 
     ";
         } else {
-            // line 43
+            // line 51
             echo "        <div class=\"alert alert-warning\" role=\"alert\">
             ";
-            // line 44
+            // line 52
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("message.empty_list"), "html", null, true);
             echo "
         </div>
     ";
         }
         
-        $__internal_73217e1e3fc60ddec3a1491b7647183463af6eeffadf8170fa454dfb87bbaa78->leave($__internal_73217e1e3fc60ddec3a1491b7647183463af6eeffadf8170fa454dfb87bbaa78_prof);
+        $__internal_7ef9462fa8a9db7c954c5312d492b3b8d2529f1141cddabe59c6afa1cadf68b3->leave($__internal_7ef9462fa8a9db7c954c5312d492b3b8d2529f1141cddabe59c6afa1cadf68b3_prof);
 
     }
 
@@ -160,7 +179,7 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
 
     public function getDebugInfo()
     {
-        return array (  141 => 44,  138 => 43,  128 => 36,  125 => 35,  113 => 29,  106 => 27,  102 => 26,  97 => 24,  93 => 23,  90 => 22,  86 => 21,  78 => 16,  73 => 14,  69 => 13,  64 => 10,  62 => 9,  57 => 8,  51 => 7,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  160 => 52,  157 => 51,  147 => 44,  144 => 43,  132 => 37,  125 => 35,  121 => 34,  113 => 29,  106 => 27,  102 => 26,  97 => 24,  93 => 23,  90 => 22,  86 => 21,  78 => 16,  73 => 14,  69 => 13,  64 => 10,  62 => 9,  57 => 8,  51 => 7,  41 => 4,  35 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -202,6 +221,14 @@ class __TwigTemplate_180323e7a3f963871c4fb25a85e24f0669ad5e2756a5c5a204bf56922fd
                                 <a href=\"{{ path('tag_view', {'id': item.id}) }}\" class=\"btn btn-default\" title=\"{{ 'action.view'|trans }}\">
                                     <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span>
                                     {{ 'action.view'|trans }}
+                                </a>
+                            </div>
+                        </td>
+                         <td>
+                            <div class=\"btn-group\" role=\"group\" aria-label=\"{{ 'label.actions'|trans }}\">
+                                <a href=\"{{ path('tag_add', {'id': item.id}) }}\" class=\"btn btn-default\" title=\"{{ 'action.add'|trans }}\">
+                                    <span class=\"glyphicon glyphicon-eye-open\" aria-hidden=\"true\"></span>
+                                    {{ 'action.add'|trans }}
                                 </a>
                             </div>
                         </td>

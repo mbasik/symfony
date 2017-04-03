@@ -159,6 +159,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_tag_view:
 
+            // tag_add
+            if ($pathinfo === '/tag/add') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_tag_add;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\TagController::addAction',  '_route' => 'tag_add',);
+            }
+            not_tag_add:
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

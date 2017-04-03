@@ -7,6 +7,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Tag;
 use AppBundle\Repository\TagRepository;
+use AppBundle\Form\TagType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -71,4 +72,38 @@ class TagController extends Controller
             ['tag' => $tag]
         );
     }
+ /**
+     * Add action.
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
+     *
+     * @Route(
+     *     "/add",
+     *     name="tag_add",
+     * )
+     * @Method({"GET", "POST"})
+     */
+    public function addAction(Request $request)
+    {
+        $tag = new Tag();
+        $form = $this->createForm(TagType::class, $tag);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->get('app.repository.tag')->save($tag);
+            $this->addFlash('success', 'message.created_successfully');
+
+            return $this->redirectToRoute('tag_index');
+        }
+
+        return $this->render(
+            'tag/add.html.twig',
+            [
+                'tag' => $tag,
+                'form' => $form->createView(),
+            ]
+        );
+    }   
 }

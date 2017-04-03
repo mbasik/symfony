@@ -21,20 +21,20 @@ class __TwigTemplate_9f6d305f9f78835a3ee32a5174229feda19be61da858f6c9c5e5b76137e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7dfc9dd35f9df5e91a2682705b5f249aaa81eff13f845f5b8dd5fc045fd497a4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7dfc9dd35f9df5e91a2682705b5f249aaa81eff13f845f5b8dd5fc045fd497a4->enter($__internal_7dfc9dd35f9df5e91a2682705b5f249aaa81eff13f845f5b8dd5fc045fd497a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/view.html.twig"));
+        $__internal_675e179a17ba7c79dca7f04214f10bc025cc81cf736ca4f46f641e2f83fe2d4e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_675e179a17ba7c79dca7f04214f10bc025cc81cf736ca4f46f641e2f83fe2d4e->enter($__internal_675e179a17ba7c79dca7f04214f10bc025cc81cf736ca4f46f641e2f83fe2d4e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tag/view.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7dfc9dd35f9df5e91a2682705b5f249aaa81eff13f845f5b8dd5fc045fd497a4->leave($__internal_7dfc9dd35f9df5e91a2682705b5f249aaa81eff13f845f5b8dd5fc045fd497a4_prof);
+        $__internal_675e179a17ba7c79dca7f04214f10bc025cc81cf736ca4f46f641e2f83fe2d4e->leave($__internal_675e179a17ba7c79dca7f04214f10bc025cc81cf736ca4f46f641e2f83fe2d4e_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_dd498b5be08a36a6a6b9a5bb0bf37a5a3fc9bd2be28b115e1b9c6b7138429804 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dd498b5be08a36a6a6b9a5bb0bf37a5a3fc9bd2be28b115e1b9c6b7138429804->enter($__internal_dd498b5be08a36a6a6b9a5bb0bf37a5a3fc9bd2be28b115e1b9c6b7138429804_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_93d1e0731aff8d014149a2dffab4c74093e1f4636dd664ab1191eae26b301e21 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_93d1e0731aff8d014149a2dffab4c74093e1f4636dd664ab1191eae26b301e21->enter($__internal_93d1e0731aff8d014149a2dffab4c74093e1f4636dd664ab1191eae26b301e21_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
@@ -42,24 +42,44 @@ class __TwigTemplate_9f6d305f9f78835a3ee32a5174229feda19be61da858f6c9c5e5b76137e
         // line 5
         if ((array_key_exists("bookmark", $context) && twig_length_filter($this->env, (isset($context["bookmark"]) ? $context["bookmark"] : $this->getContext($context, "bookmark"))))) {
             // line 6
-            echo "            dump(tag in bookmark.Tags)
+            echo "            <ul>
+            <li>";
+            // line 7
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["bookmark"]) ? $context["bookmark"] : $this->getContext($context, "bookmark")), "URL", array()), "html", null, true);
+            echo "</li>
+            ";
+            // line 8
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["bookmark"]) ? $context["bookmark"] : $this->getContext($context, "bookmark")), "Tags", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                // line 9
+                echo "               <li> ";
+                echo twig_escape_filter($this->env, $context["tag"], "html", null, true);
+                echo " </li>
+            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 11
+            echo "            </ul>
 
     ";
         } else {
-            // line 9
+            // line 14
             echo "    <p>
         ";
-            // line 10
+            // line 15
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("message.empty_list"), "html", null, true);
             echo "
     </p>
     ";
         }
-        // line 13
+        // line 18
         echo "
 ";
         
-        $__internal_dd498b5be08a36a6a6b9a5bb0bf37a5a3fc9bd2be28b115e1b9c6b7138429804->leave($__internal_dd498b5be08a36a6a6b9a5bb0bf37a5a3fc9bd2be28b115e1b9c6b7138429804_prof);
+        $__internal_93d1e0731aff8d014149a2dffab4c74093e1f4636dd664ab1191eae26b301e21->leave($__internal_93d1e0731aff8d014149a2dffab4c74093e1f4636dd664ab1191eae26b301e21_prof);
 
     }
 
@@ -75,7 +95,7 @@ class __TwigTemplate_9f6d305f9f78835a3ee32a5174229feda19be61da858f6c9c5e5b76137e
 
     public function getDebugInfo()
     {
-        return array (  59 => 13,  53 => 10,  50 => 9,  45 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  79 => 18,  73 => 15,  70 => 14,  65 => 11,  56 => 9,  52 => 8,  48 => 7,  45 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -93,7 +113,12 @@ class __TwigTemplate_9f6d305f9f78835a3ee32a5174229feda19be61da858f6c9c5e5b76137e
 {% block body %}
 
     {% if bookmark is defined and bookmark|length %}
-            dump(tag in bookmark.Tags)
+            <ul>
+            <li>{{ bookmark.URL }}</li>
+            {% for tag in bookmark.Tags%}
+               <li> {{ tag }} </li>
+            {% endfor %}
+            </ul>
 
     {% else %}
     <p>
