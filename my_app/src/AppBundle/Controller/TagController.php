@@ -65,8 +65,9 @@ class TagController extends Controller
      * )
      * @Method("GET")
      */
-    public function viewAction(Tag $tag)
+    public function viewAction($id)
     {
+        $tag = $this->get('app.repository.tag')->findOneById($id);
         return $this->render(
             'tag/view.html.twig',
             ['tag' => $tag]

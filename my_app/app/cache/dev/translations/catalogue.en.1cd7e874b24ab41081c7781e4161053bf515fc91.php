@@ -121,6 +121,7 @@ $catalogue = new MessageCatalogue('en', array (
     'label.name' => 'Tag name',
     'action.view' => 'View!',
     'label.actions' => 'More',
+    'action.add' => 'Add',
   ),
 ));
 

@@ -34,6 +34,10 @@
                 <source>label.actions</source>
                 <target>More</target>
             </trans-unit>
+            <trans-unit id="action.add">
+                <source>action.add</source>
+                <target>Add</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

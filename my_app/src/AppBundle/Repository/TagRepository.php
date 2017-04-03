@@ -59,6 +59,18 @@ class TagRepository extends EntityRepository
                 SELECT tag FROM AppBundle:Tag WHERE tag.bookmark = Bookmark
                 ');
     }
+    /**
+     * Find single record by its id.
+     *
+     * @param integer $id Single record index
+     *
+     * @return array Result
+     */
+    public function findOneById($id)
+    {
+        return isset($this->tag[$id]) && count($this->tag)
+            ? $this->tag[$id] : null;
+    }
      /**
      * Save entity.
      *

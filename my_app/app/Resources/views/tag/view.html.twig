@@ -2,18 +2,11 @@
 
 {% block body %}
 
-    {% if bookmark is defined and bookmark|length %}
-            <ul>
-            <li>{{ bookmark.URL }}</li>
-            {% for tag in bookmark.Tags%}
+    {% if tag is defined and tag|length %}
                <li> {{ tag }} </li>
-            {% endfor %}
-            </ul>
-
     {% else %}
     <p>
         {{ 'message.empty_list'|trans }}
     </p>
-    {% endif %}
-
+    {%  endif %}
 {% endblock %}
