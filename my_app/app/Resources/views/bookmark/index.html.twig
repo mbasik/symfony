@@ -10,11 +10,11 @@
             <dl>
                 <dt>{{ 'label.id'|trans }}</dt>
                 <dd>{{ loop.index0 }}</dd>
-                <dt>{{ 'label.url'|trans }}</dt>
-                <a href="/bookmark/{{ loop.index0 }}"> <dd>{{ bookmark.url }}</dd> </a>
+                <dt>{{ 'label.URL'|trans }}</dt>
+                <a href="/bookmark/{{ loop.index0 }}"> <dd>{{ bookmark.URL }}</dd> </a>
             </dl>
-            {% for tag in bookmark.tags %}
-                {{ tag }}
+            {% for Tag in bookmark.Tags %}
+                {{ Tag }}
             {% endfor %}
         {% endfor %}
 

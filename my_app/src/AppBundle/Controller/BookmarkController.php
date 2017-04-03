@@ -6,6 +6,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Repository\BookmarkRepository;
+use AppBundle\Repository\BookmarkCsvRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,17 +23,23 @@ class BookmarkController extends Controller
     /**
      * Index action.
      *
-     * @return \Symfony\Component\HttpFoundation\Response Response
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      *
      * @Route(
      *     "/",
-     *     name="bookmark_index"
+     *     defaults={"page": 1},
+     *     name="tag_index",
      * )
+     * @Route(
+     *     "/page/{page}",
+     *     requirements={"page": "[1-9]\d*"},
+     *     name="tag_index_paginated",
+     * )
+     * @Method("GET")
      */
-
-        public function indexAction()
+    public function indexAction($page)
     {
-        $bookmarks = $this->get('app.repository.bookmark')->findAll();
+        $bookmarks = $this->get('app.repository.csvbookmark')->findAll();
 
         return $this->render(
             'bookmark/index.html.twig',
@@ -41,6 +48,7 @@ class BookmarkController extends Controller
     }
     /**
      * View action.
+     *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      *
      * @Route(
@@ -50,13 +58,13 @@ class BookmarkController extends Controller
      * )
      * @Method("GET")
      */
-   public function viewAction($id)
+    public function viewAction($id)
     {
-        $bookmark = $this->get('app.repository.bookmark')->findOneById($id);
+             $bookmark = $this->get('app.repository.csvbookmark')->findOneById($id);
         
-         return $this->render(
-            'bookmark/view.html.twig',
-            ['bookmark' => $bookmark]
-        );
+              return $this->render(
+                  'bookmark/view.html.twig',
+                  ['bookmark' => $bookmark]
+              );
     }
 }

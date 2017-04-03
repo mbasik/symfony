@@ -105,32 +105,60 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        if (0 === strpos($pathinfo, '/bookmark')) {
-            // bookmark_index
-            if (rtrim($pathinfo, '/') === '/bookmark') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'bookmark_index');
-                }
-
-                return array (  '_controller' => 'AppBundle\\Controller\\BookmarkController::indexAction',  '_route' => 'bookmark_index',);
+        // bookmark_view
+        if (0 === strpos($pathinfo, '/bookmark') && preg_match('#^/bookmark/(?P<id>[1-9]\\d*)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_bookmark_view;
             }
 
-            // bookmark_view
-            if (preg_match('#^/bookmark/(?P<id>[1-9]\\d*)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_bookmark_view;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'bookmark_view')), array (  '_controller' => 'AppBundle\\Controller\\BookmarkController::viewAction',));
-            }
-            not_bookmark_view:
-
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'bookmark_view')), array (  '_controller' => 'AppBundle\\Controller\\BookmarkController::viewAction',));
         }
+        not_bookmark_view:
 
         // app_default_index
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_default_index')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/tag')) {
+            // tag_index
+            if (rtrim($pathinfo, '/') === '/tag') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_tag_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'tag_index');
+                }
+
+                return array (  'page' => 1,  '_controller' => 'AppBundle\\Controller\\TagController::indexAction',  '_route' => 'tag_index',);
+            }
+            not_tag_index:
+
+            // tag_index_paginated
+            if (0 === strpos($pathinfo, '/tag/page') && preg_match('#^/tag/page/(?P<page>[1-9]\\d*)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_tag_index_paginated;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tag_index_paginated')), array (  '_controller' => 'AppBundle\\Controller\\TagController::indexAction',));
+            }
+            not_tag_index_paginated:
+
+            // tag_view
+            if (preg_match('#^/tag/(?P<id>[1-9]\\d*)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_tag_view;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'tag_view')), array (  '_controller' => 'AppBundle\\Controller\\TagController::viewAction',));
+            }
+            not_tag_view:
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

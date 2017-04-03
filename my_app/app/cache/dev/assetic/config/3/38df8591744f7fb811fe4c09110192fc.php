@@ -2,19 +2,20 @@
 
 // :bookmark:view.html.twig
 return array (
-  'fddb9b6' => 
+  '5eb3c5e' => 
   array (
     0 => 
     array (
       0 => '@bootstrap_css',
+      1 => '../app/Resources/public/css/*',
     ),
     1 => 
     array (
     ),
     2 => 
     array (
-      'output' => 'css/fddb9b6.css',
-      'name' => 'fddb9b6',
+      'output' => 'css/5eb3c5e.css',
+      'name' => '5eb3c5e',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
@@ -22,20 +23,21 @@ return array (
       ),
     ),
   ),
-  'a56fa94' => 
+  '8c56abc' => 
   array (
     0 => 
     array (
       0 => '@jquery',
       1 => '@bootstrap_js',
+      2 => '../app/Resources/public/js/*',
     ),
     1 => 
     array (
     ),
     2 => 
     array (
-      'output' => 'js/a56fa94.js',
-      'name' => 'a56fa94',
+      'output' => 'js/8c56abc.js',
+      'name' => '8c56abc',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

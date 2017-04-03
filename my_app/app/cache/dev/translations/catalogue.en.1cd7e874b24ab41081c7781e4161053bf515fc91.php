@@ -106,10 +106,21 @@ $catalogue = new MessageCatalogue('en', array (
     'Account is disabled.' => 'Account is disabled.',
     'Account is locked.' => 'Account is locked.',
   ),
+  'pagerfanta' => 
+  array (
+    'previous' => 'Previous',
+    'next' => 'Next',
+  ),
   'messages' => 
   array (
-    'label.id' => 'Numer id',
-    'label.url' => 'URL',
+    'title.bookmarks' => 'Bookmarks',
+    'label.id' => 'Identity number',
+    'label.URL' => 'adress URL',
+    'message.empty_list' => 'We haven\'t any position on list',
+    'title.tags' => 'Tags',
+    'label.name' => 'Tag name',
+    'action.view' => 'View!',
+    'label.actions' => 'More',
   ),
 ));
 

@@ -11,9 +11,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 /**
  * Class DefaultController.
  *
- * @package AppBundle\Controller
- * @link http://epi.uj.edu.pl
- * @author EPI UJ <epi@uj.edu.pl>
+ * @package   AppBundle\Controller
+ * @link      http://epi.uj.edu.pl
+ * @author    EPI UJ <epi@uj.edu.pl>
  * @copyright (c) 2016
  */
 class DefaultController extends Controller
@@ -23,7 +23,7 @@ class DefaultController extends Controller
      *
      * @Route("/hello/{name}")
      *
-     * @param string $name Name
+     * @param  string $name Name
      * @return Response A Response instance
      */
     public function indexAction($name)
